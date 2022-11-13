@@ -60,10 +60,7 @@ e = a*b; e.label = 'e'
 d = e+c; d.label = 'd'
 ```
 
-Basically...
-$$ d = a \* b + c $$
-
-Then calculating the derivitives/ gradient of the output $d$ (manually) with respect to each of its inputs and using the [Chain Rule](https://en.wikipedia.org/wiki/Chain_rule) when necessary as below.
+Basically _e = a \* b_ and _d = e + c_. Then calculating the derivitives/ gradient of the output $d$ (manually) with respect to each of its inputs and using the [Chain Rule](https://en.wikipedia.org/wiki/Chain_rule) when necessary as below.
 
 ```python
 # Manually setting each derivitives (with Chain rule)
@@ -81,6 +78,16 @@ We would have a computational graph as below.
   alt="Computational graph"
   title="Optional title"
   style="display: block; align: center; margin: 0 auto; max-width: 200px">
+
+#### Building Neural Networks
+
+Next we apply the same ideas above to build an entire neural network engine.
+
+<img
+  src="neuron.png"
+  alt="Computational graph"
+  title="Optional title"
+  style="display: block; align: center; margin: 0 auto; max-width: 170px">
 
 #### How to Use This Repo
 
