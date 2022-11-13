@@ -6,7 +6,7 @@ In this repo, we build an auto gradient engine capable of backpropagation (just 
 
 1. Access to Google Colab or some Jupyter Notebook.
 2. Basic python programing.
-3. Basic arithmetic & calculus knowledge
+3. Basic arithmetic & calculus knowledge.
 
 ### Intro: What is an AutoGrad Engine?
 
@@ -60,10 +60,21 @@ e = a*b; e.label = 'e'
 d = e+c; d.label = 'd'
 ```
 
-$$ e = a \* b$$
-$$ d = e + c$$
+$$ e = a \* b $$
+$$ d = e + c $$
 
-Once the derivitive/ gradient of the output $d = a * b + c$ is calculated with respect to each of its inputs, we would have a computational graph as below
+Then calculating the derivitives/ gradient of the output $d$ (manually) with respect to each of its inputs and using the [Chain Rule](https://en.wikipedia.org/wiki/Chain_rule) when necessary as below.
+
+```python
+# Manually setting each derivitives (with Chain rule)
+d.grad = 1 # dd/dd
+e.grad = 1 # dd/de
+c.grad = 1 # dd/dc
+b.grad = a.data * e.grad # dd/da = de/da * dd/de
+a.grad = b.data * e.grad # dd/da = de/db * dd/de
+```
+
+We would have a computational graph as below.
 
 <img
   src="comp_graph.png"
