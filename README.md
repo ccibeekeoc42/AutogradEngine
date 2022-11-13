@@ -63,7 +63,7 @@ d = e+c; d.label = 'd'
 Once the derivitive/ gradient of the output $d = a * b + c$ is calculated with respect to each of its inputs, we would have a computational graph as below
 <img
   src="compu_graph.png"
-  alt="Alt text"
+  alt="Computational graph"
   title="Optional title"
   style="display: block; align: center; margin: 0 auto; max-width: 200px">
 
