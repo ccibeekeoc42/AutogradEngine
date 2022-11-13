@@ -33,6 +33,7 @@ class Value:
   """Class to wrap up our scalar values."""
   def __init__(self, data, _children=(), _op="", label=""):
     self.data = data
+    self.grad = 0.0
     self.label = label
     self._prev = set(_children)
     self._op = _op
@@ -49,6 +50,17 @@ class Value:
     return f"Value(data={self.data}, label={self.label})"
 ```
 
+Going with the values below:
+
+```python
+a = Value(2.0, label='a')
+b = Value(3.0, label='b')
+c = Value(10.0, label='c')
+e = a*b; e.label = 'e'
+d = e+c; d.label = 'd'
+```
+
+Once the derivitive/ gradient of the output $d = a * b + c$ is calculated with respect to each of its inputs, we would have a computational graph as below
 <img
   src="comp_graph.png"
   alt="Alt text"
