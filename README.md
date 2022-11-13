@@ -61,6 +61,7 @@ d = e+c; d.label = 'd'
 ```
 
 $$ e = a \* b $$
+and
 $$ d = e + c $$
 
 Then calculating the derivitives/ gradient of the output $d$ (manually) with respect to each of its inputs and using the [Chain Rule](https://en.wikipedia.org/wiki/Chain_rule) when necessary as below.
