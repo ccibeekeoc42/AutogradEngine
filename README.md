@@ -87,7 +87,7 @@ Next we apply the same ideas above to build an entire neural network engine.
   src="neuron.png"
   alt="Computational graph"
   title="Optional title"
-  style="display: block; align: center; margin: 0 auto; max-width: 170px">
+  style="display: block; align: center; margin: 0 auto; max-width: 120px">
 
 #### How to Use This Repo
 
