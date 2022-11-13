@@ -87,9 +87,9 @@ Next we apply the same ideas above to build an entire neural network engine.
   src="neuron.png"
   alt="Computational graph"
   title="Optional title"
-  style="display: block; align: center; margin: 0 auto; max-width: 10px">
+  style="display: block; align: center; margin: 0 auto; width: 150px">
 
-#### How to Use This Repo
+### How to Use This Repo
 
 - Start with this `README.md` file.
 - Move to the `Understanding_Derivatives.ipynb` file.
