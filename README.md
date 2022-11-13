@@ -19,3 +19,9 @@ In this repo, we focus on scalar-valued autograd engine for simplicity. This mea
 #### Example Usage
 
 Let's take the mathematical equation below where the output
+
+#### How to Use This Repo
+
+- Start with this `README.md` file/
+- Move to the `Understanding_Derivatives.ipynb` file.
+- Next the `AutoGrad.ipynb` file.
