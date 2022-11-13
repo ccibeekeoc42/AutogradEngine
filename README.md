@@ -53,7 +53,7 @@ class Value:
   src="comp_graph.png"
   alt="Alt text"
   title="Optional title"
-  style="display: block; align: center; margin: 0 auto; max-width: 220px">
+  style="display: block; align: center; margin: 0 auto; max-width: 200px">
 
 #### How to Use This Repo
 
