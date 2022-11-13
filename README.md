@@ -20,7 +20,7 @@ In this repo, we focus on scalar-valued autograd engine for simplicity. This mea
 
 Let's take the mathematical equation below where the output
 
-$f(a,b,c) = a * b + c$
+$$f(a,b,c) = a * b + c$$
 
 #### How to Use This Repo
 
