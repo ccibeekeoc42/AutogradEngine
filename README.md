@@ -26,6 +26,35 @@ The function _f(a,b,c)_ is said to be differentiable at all _a_ if it is contino
 
 $$\lim_{h \to 0} \frac{f(a+h,b,c) - f(a,b,c)}{h}$$
 
+Using objects of the sample Value class below, we are able to maintain a computational graph of the state of our mathematical equation. This gives us the ability to calculate its derivitive with respect to each or its variables.
+
+```python
+class Value:
+  """Class to wrap up our scalar values."""
+  def __init__(self, data, _children=(), _op="", label=""):
+    self.data = data
+    self.label = label
+    self._prev = set(_children)
+    self._op = _op
+
+  def __add__(self, other):
+    out = Value(self.data + other.data, _children=(self, other), _op='+')
+    return out
+
+  def __mul__(self, other):
+    out = Value(self.data * other.data, _children=(self, other), _op='*')
+    return out
+
+  def __repr__(self):
+    return f"Value(data={self.data}, label={self.label})"
+```
+
+<img
+  src="comp_graph.png"
+  alt="Alt text"
+  title="Optional title"
+  style="display: block; align: center; margin: 0 auto; max-width: 220px">
+
 #### How to Use This Repo
 
 - Start with this `README.md` file.
