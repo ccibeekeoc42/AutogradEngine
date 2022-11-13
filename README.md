@@ -13,3 +13,9 @@ In this repo, we build an auto gradient engine capable of backpropagation (just 
 An autograd engine (as used in TensorFlow and PyTorch) is a class used to calculate the derivatives (Jacobian-Vector product) at every differentiable point in the system.
 
 It does this by keeping a record graph of all operations performed on a gradient-enabled object and creating an acyclic graph called the dynamic computational graph.
+
+In this repo, we focus on scalar-valued autograd engine for simplicity. This means we loose the parallelism that comes with tensor-values autograd engines like PyTorch and TensorFlow.
+
+#### Example Usage
+
+Let's take the mathematical equation below where the output
