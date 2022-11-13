@@ -18,12 +18,16 @@ In this repo, we focus on scalar-valued autograd engine for simplicity. This mea
 
 #### Example Usage
 
-Let's take the mathematical equation below where the output
+Let's take the mathematical equation below where the output _f(a,b,c)_ is a multi-variable function of the variables _a_, _b_, and _c_.
 
 $$f(a,b,c) = a * b + c$$
 
+The function _f(a,b,c)_ is said to be differentiable at all _a_ if it is continous and the derivitive as defined below exists at for all posible values _a_. A similar case with respect to _b_ and _c_.
+
+$$\lim_{h \to 0} \frac{f(a+h,b,c) - f(a,b,c)}{h}$$
+
 #### How to Use This Repo
 
-- Start with this `README.md` file/
+- Start with this `README.md` file.
 - Move to the `Understanding_Derivatives.ipynb` file.
 - Next the `AutoGrad.ipynb` file.
