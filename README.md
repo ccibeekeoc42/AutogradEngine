@@ -73,21 +73,25 @@ a.grad = b.data * e.grad # dd/db = de/db * dd/de
 
 We would have a computational graph as below.
 
-<img
+<p align="center">
+ <img
   src="comp_graph.png"
   alt="Computational graph"
   title="Optional title"
   style="display: block; align: center; margin: 0 auto; max-width: 200px">
+</p>
 
 #### Building Neural Networks
 
 Next we apply the same ideas above to build an entire neural network engine. but we first start with a single neuron.
 
-<img
+<p align="center">
+ <img
   src="neuron.png"
   alt="Computational graph"
   title="Optional title"
   style="display: inline-block; align: center; margin: 0 auto; width: 240px">
+</p>
 
 A mathematical neuron is similar to a biological neuron but can be represented as a mathematical expression. Lets explore this in steps.
 
@@ -115,11 +119,13 @@ Its been proving that sum of linear functions always create linear functions so 
 
 Hence, we would need to introduce some non-linearity to the system by way of a squashing function. There are several non-linearities to choose from like the _sigmoid_, _relU_, _tanh_ etc but for the sake of this explannation, we'll be sticking with the _tanh_.
 
-<img
+<p align="center">
+  <img
   src="tanh.png"
   alt="Computational graph"
   title="Optional title"
   style="display: inline-block; align: center; margin: 0 auto; width: 240px">
+</p>
 
 $$f(x1, x2) = \tanh\bigl(x1*w1 + x1*w1 + b\bigr) $$
 
