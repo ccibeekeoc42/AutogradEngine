@@ -166,3 +166,4 @@ After a feed forward pass of this neuron, and then a backward pass to populate t
 - Start with this `README.md` file.
 - Move to the `Understanding_Derivatives.ipynb` file.
 - Next the `AutoGrad.ipynb` file.
+- Practice the `Exercise.ipynb` file.
