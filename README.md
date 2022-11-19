@@ -111,23 +111,29 @@ Each of these inputs then gets multiplied by corresponding sets of weights. Weig
 
 $$f(x1, x2) = x1*w1 + x1*w1$$
 
-Then we follow up with adding a bias to this expression. its helpful to think of the weights and biases as knobs in the system that can be tuned to make the neuron achieve desired performance (approximating a function). adding the bias to the mix gives us the expression below.
+Then we follow up with adding a bias to this expression. its helpful to think of the weights and biases as knobs in the system that can be tuned to make the neuron achieve desired performance (approximating a function). Adding the bias to the mix gives us the expression below.
 
 $$f(x1, x2) = x1*w1 + x1*w1 + b$$
 
-Its been proving that sum of linear functions always create linear functions so if this expression is left as is, we would only be able to make linear approximations of linear functions.
+Its been proven that sum of linear functions always create linear functions so if this expression is left as is, we would only be able to make linear approximations of linear functions.
 
 Hence, we would need to introduce some non-linearity to the system by way of a squashing function. There are several non-linearities to choose from like the _sigmoid_, _relU_, _tanh_ etc but for the sake of this explannation, we'll be sticking with the _tanh_.
 
 <p align="center">
   <img
   src="tanh.png"
-  alt="Computational graph"
+  alt="tanh"
   title="Optional title"
   style="display: inline-block; align: center; margin: 0 auto; width: 240px">
 </p>
 
+The _tanh_ introduces the non-linearity and gurantees that the output of each neuron would always be a number within the bounds of ±1 as can be seen in the image above.
+
+Putting it all together, we end up with the fuction below whic is the mathematical representation of a neuron. As a neuran network is just a netrork of neurons, this means that the mathematical expression for a neural network is just a combination of the expression below for each of the neurons in the network.
+
 $$f(x1, x2) = \tanh\bigl(x1*w1 + x1*w1 + b\bigr) $$
+
+keep in mind that the expression above only takes into account the forward pass of the neural network and the backward propagation still has to be done to propagate the gradient for rach node in the computational graph. But the code below represents what this looks like in python.
 
 ```python
 # inputs x1, x2
@@ -146,6 +152,15 @@ n = x1w1x2w2 + b; n.label = 'n'
 o = n.tanh(); o.label='o'
 ```
 
+After a feed forward pass of this neuron, and then a backward pass to populate the gradient. Our computational graph would look like this.
+
+<p align="center">
+  <img
+  src="neuron_comp_graph.png"
+  alt="tanh"
+  title="Optional title"
+  style="display: inline-block; align: center; margin: 0 auto; max-width: 200px">
+</p>
 ### How to Use This Repo
 
 - Start with this `README.md` file.
