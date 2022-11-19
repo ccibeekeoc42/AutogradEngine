@@ -68,7 +68,7 @@ d.grad = 1 # dd/dd
 e.grad = 1 # dd/de
 c.grad = 1 # dd/dc
 b.grad = a.data * e.grad # dd/da = de/da * dd/de
-a.grad = b.data * e.grad # dd/da = de/db * dd/de
+a.grad = b.data * e.grad # dd/db = de/db * dd/de
 ```
 
 We would have a computational graph as below.
@@ -81,13 +81,42 @@ We would have a computational graph as below.
 
 #### Building Neural Networks
 
-Next we apply the same ideas above to build an entire neural network engine.
+Next we apply the same ideas above to build an entire neural network engine. but we first start with a single neuron.
 
 <img
   src="neuron.png"
   alt="Computational graph"
   title="Optional title"
-  style="display: inline-block; align: center; margin: 0 auto; width: 200px">
+  style="display: inline-block; align: center; margin: 0 auto; width: 240px">
+
+A mathematical neuron is similar to a biological neuron but can be represented as a mathematical expression. Lets explore this in steps.
+
+Supposed we had a function _f(x1, x2)_, where f is a multivariable function with two independent variables _x1_ and _x2_ which can take on any values within the real number systems (hence function _f_ is continous and differentiable).
+
+For the sake of simplicity, we would force _x1_ and _x2_ to the values of _2.0_ and _0.0_ respectively to denote a single batch of 1 instance.
+
+| **_x1_** | **_x2_** |
+| -------- | -------- |
+| 2.0      | 0.0      |
+
+$$f(x1, x2) = \tanh\bigl(x1*w1 + x1*w1 + b\bigr) $$
+
+```python
+# inputs x1, x2
+x1 = Value(2.0, label='x1')
+x2 = Value(0.0, label='x2')
+# weights w1, w2
+w1 = Value(-3.0, label='w1')
+w2 = Value(1.0, label='w2')
+# bias of the neuron
+b = Value(6.8813735870195432, label='b')
+# x1*w1 + x2*w2 + b
+x1w1 = x1*w1; x1w1.label='x1*w1'
+x2w2 = x2*w2; x2w2.label='x2*w2'
+x1w1x2w2 = x1w1 + x2w2; x1w1x2w2.label = 'x1w1 + x2w2'
+n = x1w1x2w2 + b; n.label = 'n'
+o = n.tanh(); o.label='o'
+```
 
 ### How to Use This Repo
 
