@@ -99,6 +99,28 @@ For the sake of simplicity, we would force _x1_ and _x2_ to the values of _2.0_ 
 | -------- | -------- |
 | 2.0      | 0.0      |
 
+Each of these inputs then gets multiplied by corresponding sets of weights. Weights are typically initialized to some random values but this values gets tweaked an tunned to desired outcome. This leads us to the expression below.
+
+| **_w1_** | **_w2_** |
+| -------- | -------- |
+| -3.0     | 1.0      |
+
+$$f(x1, x2) = x1*w1 + x1*w1$$
+
+Then we follow up with adding a bias to this expression. its helpful to think of the weights and biases as knobs in the system that can be tuned to make the neuron achieve desired performance (approximating a function). adding the bias to the mix gives us the expression below.
+
+$$f(x1, x2) = x1*w1 + x1*w1 + b$$
+
+Its been proving that sum of linear functions always create linear functions so if this expression is left as is, we would only be able to make linear approximations of linear functions.
+
+Hence, we would need to introduce some non-linearity to the system by way of a squashing function. There are several non-linearities to choose from like the _sigmoid_, _relU_, _tanh_ etc but for the sake of this explannation, we'll be sticking with the _tanh_.
+
+<img
+  src="tanh.png"
+  alt="Computational graph"
+  title="Optional title"
+  style="display: inline-block; align: center; margin: 0 auto; width: 240px">
+
 $$f(x1, x2) = \tanh\bigl(x1*w1 + x1*w1 + b\bigr) $$
 
 ```python
