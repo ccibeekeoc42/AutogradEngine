@@ -161,6 +161,9 @@ After a feed forward pass of this neuron, and then a backward pass to populate t
   title="Optional title"
   style="display: inline-block; align: center; margin: 0 auto; max-width: 200px">
 </p>
+
+Then we can proceed to building an entire neural network (network of neurons). A layer is a collection of neurons that all recieve the same inputs and a Multi Layered Perceptron (MLP) can have as many layers as desired.
+
 ### How to Use This Repo
 
 - Start with this `README.md` file.
